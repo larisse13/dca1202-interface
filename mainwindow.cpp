@@ -26,10 +26,10 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->plotter_XY->paintMatrix( sculptor, 50 );
 
-    ui->label_Red->setText("Red: ");
-    ui->label_Green->setText("Green: ");
-    ui->label_Blue->setText("Blue: ");
-    ui->label_Alpha->setText("Alpha: ");
+    ui->label_Red->setText("Vermelho: ");
+    ui->label_Green->setText("Verde: ");
+    ui->label_Blue->setText("Azul: ");
+    ui->label_Alpha->setText("Opacidade: ");
 
     connect(ui->horizontalSliderRed,
             SIGNAL(valueChanged(int)),
@@ -187,7 +187,7 @@ void MainWindow::drawFigure(int x0, int y0, int z0, int brush)
                                         (ui->lineEditElipsoidRadiusY->text()).toInt(),
                                         (ui->lineEditElipsoidRadiusZ->text()).toInt()));
     }
-    for(int i = 0; i< figs.size(); i++){
+    for(int i = 0; i< int(figs.size()); i++){
         figs[i]->draw(*sculptor);
     }
     this->drawPlane();
@@ -311,7 +311,7 @@ void MainWindow::mudaCor()
 {
     QColorDialog d;
 
-    QColor previousColor(r*255, g*255, b*255);
+    QColor previousColor(int(r*255), int(g*255), int(b*255));
     d.setCurrentColor(previousColor);
     d.exec();
 
@@ -348,7 +348,7 @@ void MainWindow::redSliderChangeColor(int slider)
 
 void MainWindow::greenSliderChangeColor(int slider)
 {
-    float aux = slider/100.0;
+    float aux = slider/100.00;
     g = aux;
 
 }
