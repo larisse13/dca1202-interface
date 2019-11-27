@@ -4,10 +4,11 @@ Trabalho da 3ª unidade da disciplina de Programação Avançada/UFRN, consiste 
 
 O Scultor3D é uma aplicação desenvolvida em C++ com o framework gráfico do Qt Creator, que permite o desenho de objetos tridimensionais utilizando Voxels, e salvando no formato de arquivo suportado pela `.off `.
 
-Com uma interface bastante intuitiva, qualquer usuário será capaz de utilizá-la sem dificuldade. O espaço destinado ao desenho é uma  malha quadriculada (imagem  abaixo). Nesta malha, colocamos um exemplo de ilustração.
+Com uma interface bastante intuitiva, qualquer usuário será capaz de utilizá-la sem dificuldade. O espaço destinado ao desenho é uma  malha quadriculada. Nesta malha, colocamos um exemplo de ilustração.
 
 
-![Interface completa](interface.PNG)
+-----------------------------------
+
 
 
 ### Interface
@@ -22,25 +23,27 @@ Existem cinco áreas no programa:
 
 -----------------------------------
 
+
+
 ### Matriz de Desenho
 
 A aplicação inicia com uma matriz de desenho de 10x10x10 voxels, mas o usuário pode alterar a matriz de desenho para outras dimensões em File>New 3D Canvas. **AVISO:** isso irá apagar qualquer desenho não salvo.
 
 
-![Matriz de voxels](inter.PNG)
-
-
 ------------------------------------
+
+
 
 ### Para desenhar
 
-Para começar a desenhar basta clicar na malha, manter o botão pressionado e arrastar o mouse. Caso o usuário prefira outra forma, basta selecionar algum dos ícones que ficam na parte superior esquerda da janela de desenho (imagem abaixo). Na ordem, eles são: desennhar voxel, apagar voxel, desenhar caixa, apagar caixa, desenhar esfera, apagar esfera, desenhar elipsóide e apagar elipsóide.
+Para começar a desenhar basta clicar na malha, manter o botão pressionado e arrastar o mouse. Caso o usuário prefira outra forma, basta selecionar algum dos ícones que ficam na parte superior esquerda da janela de desenho. Na ordem, eles são: desennhar voxel, apagar voxel, desenhar caixa, apagar caixa, desenhar esfera, apagar esfera, desenhar elipsóide e apagar elipsóide.
 
-------------------------------------------
-
-![Botões](botoes.PNG)
 
 Após clicar na forma de desenho que você achar mais apropriada, o próximo passo é selecionar as dimensões da forma escolhida. Os espaços destinados ao armazenamento dessas informações estão na parte superior da janela e podem ser vistos na primeira figura. Cada forma tem suas dimensões e é importante lembrar de preencher todas as dimensões da forma escolhida e nunca botar números negativos.
+
+
+-----------------------------------
+
 
 
 ### Salvando no formato .off
