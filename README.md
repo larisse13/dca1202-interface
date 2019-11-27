@@ -1,83 +1,46 @@
-# Paint3D
+# Scultor3D
 
-Paint3D é uma aplicação Desktop desenvolvida em C++ com o framework gráfico Qt que permite o desenho de objetos tridimensionais utilizando Voxels. Atualmente, o único formato de arquivo suportado pela aplicação é `.off `.
+Trabalho da 3ª unidade da disciplina de Programação Avançada/UFRN, consiste na construção de um escultor 3D que permite ao usuário desenhar algumas formas pré-determinadas, como box, sphere, ellipsoide, além de voxels individuais em uma matriz de desenho de tamanho estabelecido pelo mesmo.Também é possível ao usuário apagar o que foi desenhado.
 
-## Pré-requisitos
+O Scultor3D é uma aplicação desenvolvida em C++ com o framework gráfico do Qt Creator, que permite o desenho de objetos tridimensionais utilizando Voxels, e salvando no formato de arquivo suportado pela `.off `.
 
-É necessário o [Qt Creator](https://www.qt.io/download) com uma versão do Qt 5.12.2 ou superior para compilar o projeto (não garantimos retrocompatibilidade com versões anteriores).
+Com uma interface bastante intuitiva, qualquer usuário será capaz de utilizá-la sem dificuldade. O espaço destinado ao desenho é uma  malha quadriculada (imagem  abaixo). Nesta malha, colocamos um exemplo de ilustração.
 
-## Instalação
-
-Clone o repositório através do GitHub ou através do terminal:
-```git
-git clone https://github.com/Atarico/Paint3D.git
-```
-
-Após a clonagem, abra o arquivo Paint3D.pro com o Qt Creator e compile o projeto.
-
-## Utilização
-
-Após a compilação do projeto, basta executá-lo para interagir com a interface gráfica:
 
 ```diff
--Imagem de toda a aplicação-
+-Imagem da malha c um desenho nela-
 ```
 
-### Novas Matrizes de Desenho
-
-A aplicação inicia com uma matriz de desenho de 10x10x10 voxels. Mas o usuário pode iniciar uma nova matriz de desenho com outras dimensões em File>New 3D Canvas. **ATENÇÃO!** fazer isso irá permanentemente destruir qualquer matriz de desenho previamente em uso, incluindo seu conteúdo já desenhado, portanto recomendamos cuidado.
-
-```diff
--Imagem do popup de nova matriz de desenho-
-```
 
 ### Interface
 
-Existem quatro telas no programa: 
-+ 3D(topo esquerdo): é a tela 3D, onde você poderá ver em tempo real um _preview_ do que está sendo desenhado.
-+ XY(topo direito): é a tela de desenho que representa os planos XY da sua matriz. Para alterar o plano atual, basta utilizar o slider ao lado, que representa o eixo Z.
-+ XZ(base esquerda): é a tela de desenho que representa os planos XZ da sua matriz. Para alterar o plano atual, basta utilizar o slider ao lado, que representa o eixo Y.
-+ YZ(base direita): é a tela de desenho que representa os planos YZ da sua matriz. Para alterar o plano atual, basta utilizar o slider ao lado, que representa o eixo X.
+Existem cinco áreas no programa: 
++ Retângulo(topo esquerda): medidas XYZ para desenhar o voxel e o box. Também servem de dimensão de suas borrachas.
++ Esfera(topo meioa): medida do raio para desenhar a esfera. Também servem de dimensão da sua borracha.
++ Elipse(topo direita): medidas XYZ para desenhar o ellipsoide. Também servem de dimensão da sua borracha.
++ Sliders(base à esquerda): botões de deslizar para alterar as cores e opacidade. As cores seguem o padrão RGBA (red. green, blue e alfa), onde o alfa/opacidade representa a transparência.
++ Tela (base à direita): é a malha quadriculada, onde você poderá ver em tempo real um _preview_ do que está sendo desenhado.
 
 
-### Desenhando
+### Matriz de Desenho
 
-Na barra de ferramentas existem 9 botões que são, da esquerda para a direita:
+A aplicação inicia com uma matriz de desenho de 10x10x10 voxels, mas o usuário pode alterar a matriz de desenho para outras dimensões em File>New 3D Canvas. **AVISO:** isso irá apagar qualquer desenho não salvo.
 
-+ desenhar um voxel
-+ apagar um voxel
-+ desenhar um retângulo de voxels
-+ apagar um retângulo de voxels 
-+ desenhar uma esfera de voxels 
-+ apagar uma esfera de voxels
-+ desenhar uma elipsoide de voxels
-+ apagar uma elipsoide de voxels
-+ Salvar a escultura de voxels em um arquivo .OFF
 
-Esses botões são a principal forma de interação com o ambiente tridimensional.
+### Para desenhar
 
-Para auxiliar o usuário, abaixo dos botões existe uma série de 3 displays com a posicao (X, Y, Z) do mouse em relação a sua matriz de desenho.
+Para começar a desenhar basta clicar na malha, manter o botão pressionado e arrastar o mouse. Caso o usuário prefira outra forma, basta selecionar algum dos ícones que ficam na parte superior esquerda da janela de desenho (imagem abaixo). Na ordem, eles são: desennhar voxel, apagar voxel, desenhar caixa, apagar caixa, desenhar esfera, apagar esfera, desenhar elipsóide e apagar elipsóide.
 
-Ao lado dos displays, existe o selecionador de cor, onde o usuário pode selecionar a cor desejada tanto por meio dos quatro sliders RGBA, ou clicando no botão "color" para abrir o pop-up de seleção de cor.
 
 ```diff
--Imagem do popup de seleção de cor-
+-Imagem dos botões-
 ```
 
-Ao lado do seletor de cores há os parâmetros para se desenhar um retângulo, esfera e elipse (lembre-se que os parâmetros servem tanto para os botões de desenhar quanto para os de apagar).
-Com a cor e a ferramenta de desenho desejada selecionada, basta clicar e arrastar com o botão esquerdo em um dos três planos de desenho para começar a desenhar sua figura.
-
-```diff
--Imagem de alguma figura desenhada-
-```
-
-### Salvando em formato .off
-
-Atualmente, o único formato de arquivo para o qual é possível exportar a escultura de voxels feita é o formado .off, utilizado para a visualização de objetos 3D.
-
-Para salvar seu arquivo em .off basta clicar no ultimo botão da barra de ferramentas ou ir em File>Save as .off. Ambas as opções irão abrir um diálogo para salvar seu arquivo nas pastas do seu sistema.
+Após clicar na forma de desenho que você achar mais apropriada, o próximo passo é selecionar as dimensões da forma escolhida. Os espaços destinados ao armazenamento dessas informações estão na parte superior da janela e podem ser vistos na primeira figura. Cada forma tem suas dimensões e é importante lembrar de preencher todas as dimensões da forma escolhida e nunca botar números negativos.
 
 
-## Agradecimentos
+### Salvando no formato .off
 
-Agradecemos a orientação do professor [Agostinho Brito](https://agostinhobritojr.github.io/) no desenvolvimento deste projeto ao longo do semestre.
+Atualmente, o único formato de arquivo possível para exportar a escultura de voxels é o formado .off. Formato também utilizado para a visualização de objetos 3D. Para poder visualizar a imagem gerada no programa de forma correta, devemos abrir o arquivo .off em softwares especiais, como: o meshlab.
+
+Para salvar seu arquivo em .off basta clicar no último botão da barra de ferramentas ou ir em File>Save as .off. Ambas as opções irão abrir um diálogo para salvar seu arquivo no local que o usuário preferir.
