@@ -370,7 +370,7 @@ void MainWindow::writeOFF()
 {
     QString fileName;
 
-    fileName = QFileDialog::getSaveFileName(this, tr("Save File"),
-                                   "./untitled.off",
+    fileName = QFileDialog::getSaveFileName(this, tr("Salvar"),
+                                   "./imagem.off",
                                    tr("OFF (*.off)"));
 }

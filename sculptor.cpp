@@ -103,6 +103,11 @@ vector<vector<Voxel>> Sculptor::planeXY(float zFactor)
     return plane;
 }
 
+
+/*!
+ * \brief Implementa a função para escrever o arquivo off.
+ * \param filename
+ */
 void Sculptor::writeOFF(string filename){
 
     ofstream fout;

@@ -22,7 +22,10 @@ Plotter::Plotter(QWidget *parent) : QWidget(parent)
 
 
 
-
+/*!
+ * \brief Função responsável por capturar o evento de arrastar/clicar do mouse e desenhar as formas geométricas.
+ * \param event
+ */
 void Plotter::paintEvent(QPaintEvent *event)
 {
     QPainter p(this);
@@ -124,6 +127,12 @@ void Plotter::mouseReleaseEvent(QMouseEvent *event){
   }
 }
 
+
+/*!
+ * \brief Função responsável por exibir a matriz.
+ * \param sculpt
+ * \param depth
+ */
 void Plotter::paintMatrix(Sculptor *sculpt, int depth){
 
     float depthNorm = float(depth)/100;

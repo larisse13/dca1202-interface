@@ -1,6 +1,14 @@
 #include "cutellipsoid.h"
 
-
+/*!
+ * \brief Método responsável por apagar elipsoides desenhadas na matriz de voxels.Recebe como entrada as coordenadas do centro do elipsoide e os raios.
+ * \param _xcenter
+ * \param _ycenter
+ * \param _zcenter
+ * \param _rx
+ * \param _ry
+ * \param _rz
+ */
 CutEllipsoid::CutEllipsoid(int _xcenter, int _ycenter, int _zcenter, int _rx, int _ry, int _rz)
 {
     xcenter = _xcenter;ycenter = _ycenter;zcenter = _zcenter;
@@ -10,6 +18,11 @@ CutEllipsoid::~CutEllipsoid()
 {
 
 }
+
+/*!
+ * \brief A função draw será responsável por redesenhar a matriz retirando cada voxel do elipsoide.
+ * \param t
+ */
 void CutEllipsoid::draw(Sculptor &t){
     for (int i = xcenter-rx; i < xcenter+rx; i++) {
         for (int j = ycenter-ry; j < ycenter+ry; j++){

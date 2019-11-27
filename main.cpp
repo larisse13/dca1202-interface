@@ -11,7 +11,12 @@
 #include "putvoxel.h"
 #include "cutvoxel.h"
 
-
+/*!
+ * \brief No método principal apenas será exibida a interface gráfica do programa.
+ * \param argc
+ * \param argv
+ * \return
+ */
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);

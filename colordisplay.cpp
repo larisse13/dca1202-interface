@@ -9,6 +9,10 @@ colorDisplay::colorDisplay(QWidget *parent) : QWidget(parent)
 
 }
 
+/*!
+ * \brief O método paintEvent tem como objetivo preparar a matriz de voxels para ser pintada.
+ * \param event - Recebe como parâmetro de entrada o clique do usuário.
+ */
 void colorDisplay::paintEvent(QPaintEvent *event)
 {
     QPainter p(this);
@@ -29,6 +33,14 @@ void colorDisplay::paintEvent(QPaintEvent *event)
 
 }
 
+
+/*!
+ * \brief A função tem como objetivo mudar a cor da caneta. Recebe como parâmetros de entrada os valores correspondentes ao código RGBA das cores.
+ * \param r
+ * \param g
+ * \param b
+ * \param a
+ */
 void colorDisplay::changeColor(int r, int g, int b, int a)
 {
     this->r = r;

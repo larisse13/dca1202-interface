@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.16"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>[DCA1202] Interface Escultor 3D: Paint3D</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.jpeg"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">[DCA1202] Interface Escultor 3D
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Projeto da Unidade III da disciplina Programação Avançada da UFRN.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.16 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Busca');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="PageDoc"><div class="header">
+  <div class="headertitle">
+<div class="title">Paint3D </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p>Paint3D é uma aplicação Desktop desenvolvida em C++ com o framework gráfico Qt que permite o desenho de objetos tridimensionais utilizando Voxels. Atualmente, o único formato de arquivo suportado pela aplicação é <code>.off</code>.</p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Pré-requisitos</h1>
+<p>É necessário o <a href="https://www.qt.io/download">Qt Creator</a> com uma versão do Qt 5.12.2 ou superior para compilar o projeto (não garantimos retrocompatibilidade com versões anteriores).</p>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Instalação</h1>
+<p>Clone o repositório através do GitHub ou através do terminal: </p><div class="fragment"><div class="line">git clone https://github.com/Atarico/Paint3D.git</div>
+</div><!-- fragment --><p>Após a clonagem, abra o arquivo Paint3D.pro com o Qt Creator e compile o projeto.</p>
+<h1><a class="anchor" id="autotoc_md3"></a>
+Utilização</h1>
+<p>Após a compilação do projeto, basta executá-lo para interagir com a interface gráfica:</p>
+<div class="fragment"><div class="line">-Imagem de toda a aplicação-</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md4"></a>
+Novas Matrizes de Desenho</h2>
+<p>A aplicação inicia com uma matriz de desenho de 10x10x10 voxels. Mas o usuário pode iniciar uma nova matriz de desenho com outras dimensões em File&gt;New 3D Canvas. <b>ATENÇÃO!</b> fazer isso irá permanentemente destruir qualquer matriz de desenho previamente em uso, incluindo seu conteúdo já desenhado, portanto recomendamos cuidado.</p>
+<div class="fragment"><div class="line">-Imagem do popup de nova matriz de desenho-</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md5"></a>
+Interface</h2>
+<p>Existem quatro telas no programa:</p><ul>
+<li>3D(topo esquerdo): é a tela 3D, onde você poderá ver em tempo real um <em>preview</em> do que está sendo desenhado.</li>
+<li>XY(topo direito): é a tela de desenho que representa os planos XY da sua matriz. Para alterar o plano atual, basta utilizar o slider ao lado, que representa o eixo Z.</li>
+<li>XZ(base esquerda): é a tela de desenho que representa os planos XZ da sua matriz. Para alterar o plano atual, basta utilizar o slider ao lado, que representa o eixo Y.</li>
+<li>YZ(base direita): é a tela de desenho que representa os planos YZ da sua matriz. Para alterar o plano atual, basta utilizar o slider ao lado, que representa o eixo X.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md6"></a>
+Desenhando</h2>
+<p>Na barra de ferramentas existem 9 botões que são, da esquerda para a direita:</p>
+<ul>
+<li>desenhar um voxel</li>
+<li>apagar um voxel</li>
+<li>desenhar um retângulo de voxels</li>
+<li>apagar um retângulo de voxels</li>
+<li>desenhar uma esfera de voxels</li>
+<li>apagar uma esfera de voxels</li>
+<li>desenhar uma elipsoide de voxels</li>
+<li>apagar uma elipsoide de voxels</li>
+<li>Salvar a escultura de voxels em um arquivo .OFF</li>
+</ul>
+<p>Esses botões são a principal forma de interação com o ambiente tridimensional.</p>
+<p>Para auxiliar o usuário, abaixo dos botões existe uma série de 3 displays com a posicao (X, Y, Z) do mouse em relação a sua matriz de desenho.</p>
+<p>Ao lado dos displays, existe o selecionador de cor, onde o usuário pode selecionar a cor desejada tanto por meio dos quatro sliders RGBA, ou clicando no botão "color" para abrir o pop-up de seleção de cor.</p>
+<div class="fragment"><div class="line">-Imagem do popup de seleção de cor-</div>
+</div><!-- fragment --><p>Ao lado do seletor de cores há os parâmetros para se desenhar um retângulo, esfera e elipse (lembre-se que os parâmetros servem tanto para os botões de desenhar quanto para os de apagar). Com a cor e a ferramenta de desenho desejada selecionada, basta clicar e arrastar com o botão esquerdo em um dos três planos de desenho para começar a desenhar sua figura.</p>
+<div class="fragment"><div class="line">-Imagem de alguma figura desenhada-</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md7"></a>
+Salvando em formato .off</h2>
+<p>Atualmente, o único formato de arquivo para o qual é possível exportar a escultura de voxels feita é o formado .off, utilizado para a visualização de objetos 3D.</p>
+<p>Para salvar seu arquivo em .off basta clicar no ultimo botão da barra de ferramentas ou ir em File&gt;Save as .off. Ambas as opções irão abrir um diálogo para salvar seu arquivo nas pastas do seu sistema.</p>
+<h1><a class="anchor" id="autotoc_md8"></a>
+Agradecimentos</h1>
+<p>Agradecemos a orientação do professor <a href="https://agostinhobritojr.github.io/">Agostinho Brito</a> no desenvolvimento deste projeto ao longo do semestre. </p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.16
+</small></address>
+</body>
+</html>
